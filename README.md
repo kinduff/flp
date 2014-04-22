@@ -9,5 +9,7 @@ This is just a repo, to install [clic here](http://kinduff.com/flp) or [here](ht
 
 Run
 
-~~~.bash
-$ 
+```sh
+  $ npm install
+  $ grunt bookmarklet:generate
+```
