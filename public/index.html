@@ -1,0 +1,65 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>facespac.es livepreview!</title>
+<style>
+body {
+  background-image: url('bgpattern.png');
+}
+h1, p {
+  text-align: center;
+  color: #FFF;
+}
+h1 {
+  font-size: 3em;
+}
+a {
+  color: #FFF;
+  text-decoration: none;
+  border-bottom: 1px dotted #FFF;
+}
+#content {
+  width: 650px;
+  height: 300px;
+  position: absolute;
+  top: 50%; left: 50%;
+  margin-left: -325px;
+  margin-top: -150px;
+  font-family: Helvetica, Arial;
+  text-align: center;
+}
+#bookmark {
+  display: block;
+  width: 200px;
+  height: 40px;
+  margin: 30px auto 30px auto;
+  border-radius: 10px;
+  padding-top: 20px;
+  background: transparent;
+  border: 2px solid #FFF;
+  -webkit-transition: background-color 0.5s;
+  -mox-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+#bookmark:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+.note {
+  font-size: 0.8em;
+}
+h1 span {
+  font-size: 0.3em;
+}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>facespac.es livepreview!</h1>
+<p>Simple bookmark for <a href="http://facespac.es" target="blank">facespac.es</a> to see a live preview of your snapshot.<br/>Drag it & click it.</p>
+<a href='javascript:(function(){;var%20numDependencies=0,loadedDependencies=0;function%20scriptLoaded()%7BloadedDependencies++;if(numDependencies===loadedDependencies)%7BafterDepsLoaded()%7D%7Dfunction%20afterDepsLoaded()%7B(function()%7Bvar%20css=%22#fake,%20#fake%20video%20%7B%22;css+=%22width:%20300px;%22;css+=%22height:%20300px;%22;css+=%22position:%20relative;%22;css+=%22display:%20inline-block;%22;css+=%22top:%200;%22;css+=%22left;%200;%22;css+=%22margin;%200;%22;css+=%22overflow:%20hidden;%22;css+=%22%7D%22;css+=%22#fake%20video%20%7B%22;css+=%22width:%20406px%20!important;%22;css+=%22height:%20303px%20!important;%22;css+=%22position:%20absolute%20!important;%22;css+=%22top:%200%20!important;%22;css+=%22left:%200%20!important;%22;css+=%22margin-left:%20-50px%20!important;%22;css+=%22%7D%22;css+=%22#video-wrapper%20video%20%7B%20display:%20none;%20%7D%22;css+=%22.onionToggle%20%7B%22;css+=%22position:%20absolute;%22;css+=%22left:%200;%22;css+=%22top:%200;%22;css+=%22width:%2025px;%22;css+=%22height:%2025px;%22;css+=%22background-color:%20#3FE0FD;%22;css+=%22z-index:%2020;%22;css+=%22cursor:%20pointer;%22;css+=%22background-image:%20url(http://toddhpage.com/meatspack/onion.png);%22;css+=%22background-size:%2025px%2025px;%22;css+=%22opacity:%200.3;%22;css+=%22%7D%22;css+=%22.onionImage%20%7B%22;css+=%22position:%20absolute;%22;css+=%22opacity:%200.5;%22;css+=%22z-index:%2010;%22;css+=%22display:%20none;%22;css+=%22%7D%22;css+=%22.onionEnabled.onionImage%20%7B%20display:%20block;%20%7D%22;var%20head=document.head%7C%7Cdocument.getElementsByTagName(%22head%22)%5B0%5D,style=document.createElement(%22style%22),hasOnion=false;style.appendChild(document.createTextNode(css));head.appendChild(style);var%20chat=document.getElementById(%22chat-list%22);function%20get_time()%7Bvar%20c=new%20Date;var%20h=c.getHours();var%20m=c.getMinutes();mi=(m%3C10?%220%22:%22%22)+m;var%20ap=h%3C12?%22AM%22:%22PM%22;return%20h%2512+%22:%22+mi+%22%20%22+ap%7Dfunction%20add_fake()%7Bvar%20fake_div=document.createElement(%22li%22),onionClass=hasOnion?%22onionEnabled%22:%22%22;fake_div.id=%22fake%22;fake_div.innerHTML=document.getElementById(%22video-wrapper%22).innerHTML+%22%3Cp%3E%22+$(%22#composer-message%22).val()+%22%3C/p%3E%3Ctime%20class='timestamp'%3E%22+get_time()+%22%3C/time%3E%22+%22%3Cdiv%20class='onionToggle'%3E%3C/div%3E%22+%22%3Cimg%20class='onionImage%20%22+onionClass+%22'%20src=%22+$(%22#chat-list%20li%22).first().find(%22img%22).attr(%22src%22)+%22%3E%22;chat.insertBefore(fake_div,chat.childNodes%5B0%5D)%7Dfunction%20fake_function()%7Bvar%20element=document.getElementById(%22fake%22);element.parentNode.removeChild(element);add_fake()%7D$(%22#composer-message%22).keyup(function()%7B$(%22#fake%20p%22).text($(this).val())%7D);$(%22body%22).on(%22click%22,%22.onionToggle%22,function()%7B$(%22.onionImage%22).toggleClass(%22onionEnabled%22);hasOnion=!hasOnion%7D);function%20HandleDOM_Change()%7Bfake_function()%7DfireOnDomChange(%22#chat-list%22,HandleDOM_Change,100);function%20fireOnDomChange(selector,actionFunction,delay)%7B$(selector).bind(%22DOMSubtreeModified%22,fireOnDelay);function%20fireOnDelay()%7Bif(typeof%20this.Timer==%22number%22)%7BclearTimeout(this.Timer)%7Dthis.Timer=setTimeout(function()%7BfireActionFunction()%7D,delay?delay:333)%7Dfunction%20fireActionFunction()%7B$(selector).unbind(%22DOMSubtreeModified%22,fireOnDelay);actionFunction();$(selector).bind(%22DOMSubtreeModified%22,fireOnDelay)%7D%7Dadd_fake()%7D)()%7DafterDepsLoaded();})()
+' id="bookmark">livepreview!</a>
+<p class="note">with ♥ by <a href="http://twitter.com/kinduff" target="blank">@kinduff</a> | <a href="https://gist.github.com/kinduff/10694449">source</a></p>
+</div>
+</body>
+</html>
+
