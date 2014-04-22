@@ -7,9 +7,9 @@ This is just a repo, to install [clic here](http://kinduff.com/flp) or [here](ht
 
 ## Bookmarkletify it
 
-Run
-
 ```sh
   $ npm install
-  $ grunt bookmarklet:generate
+  $ grunt
 ```
+
+Special thanks to [@thethp](https://github.com/thethp).
