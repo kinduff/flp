@@ -1,0 +1,27 @@
+{
+  "name": "flp",
+  "version": "0.0.1",
+  "description": "A live Preview tool for facespac.es",
+  "main": "Gruntfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kinduff/flp.git"
+  },
+  "keywords": [
+    "flp",
+    "facespac.es",
+    "facespaces",
+    "livepreview",
+    "bookmarklet"
+  ],
+  "author": "Alejandro Rodriguez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kinduff/flp/issues"
+  },
+  "homepage": "https//kinduff.com/flp",
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-bookmarklet-thingy": "~0.2.0"
+  }
+}

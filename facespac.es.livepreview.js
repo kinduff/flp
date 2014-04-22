@@ -1,43 +1,10 @@
-(function () {
-    var css = '#fake, #fake video {';
-    css += 'width: 300px;';
-    css += 'height: 300px;';
-    css += 'position: relative;';
-    css += 'display: inline-block;';
-    css += 'top: 0;';
-    css += 'left; 0;';
-    css += 'margin; 0;';
-    css += 'overflow: hidden;';
-    css += '}';
-    css += '#fake video {';
-    css += 'width: 406px !important;';
-    css += 'height: 303px !important;';
-    css += 'position: absolute !important;';
-    css += 'top: 0 !important;';
-    css += 'left: 0 !important;';
-    css += 'margin-left: -50px !important;';
-    css += '}';
-    css += '#video-wrapper video { display: none; }';
-    css += '.onionToggle {';
-    css += 'position: absolute;';
-    css += 'left: 0;';
-    css += 'top: 0;';
-    css += 'width: 25px;';
-    css += 'height: 25px;';
-    css += 'background-color: #3FE0FD;';
-    css += 'z-index: 20;';
-    css += 'cursor: pointer;';
-    css += 'background-image: url(http://toddhpage.com/meatspack/onion.png);';
-    css += 'background-size: 25px 25px;';
-    css += 'opacity: 0.3;';
-    css += '}';
-    css += '.onionImage {';
-    css += 'position: absolute;';
-    css += 'opacity: 0.5;';
-    css += 'z-index: 10;';
-    css += 'display: none;';
-    css += '}';
-    css += '.onionEnabled.onionImage { display: block; }';
+(function ()
+    var css = '#fake, #fake video {width: 300px;height: 300px;position: relative;display: inline-block;top: 0;left; 0;margin; 0;overflow: hidden;}';
+    css += '#fake video {width: 406px !important;height: 303px !important;position: absolute !important;top: 0 !important;left: 0 !important;margin-left: -50px !important;}';
+    css += '#video-wrapper video {display: none;}';
+    css += '.onionToggle {position: absolute;left: 0;top: 0;width: 25px;height: 25px;background-color: #3FE0FD;z-index: 20;cursor: pointer;background-image: url(http://toddhpage.com/meatspack/onion.png);background-size: 25px 25px;opacity: 0.3;}';
+    css += '.onionImage {position: absolute;opacity: 0.5;z-index: 10;display: none;}';
+    css += '.onionEnabled.onionImage {display: block;}';
 
     var head = document.head || document.getElementsByTagName('head')[0],
         style = document.createElement('style'),
@@ -84,7 +51,7 @@
     fireOnDomChange('#chat-list', HandleDOM_Change, 100);
     function fireOnDomChange(selector, actionFunction, delay) {
         $(selector).bind('DOMSubtreeModified', fireOnDelay);
- 
+
         function fireOnDelay() {
             if (typeof this.Timer == "number") {
                 clearTimeout(this.Timer);
