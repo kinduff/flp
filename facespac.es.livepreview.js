@@ -18,15 +18,36 @@
     css += 'margin-left: -50px !important;';
     css += '}';
     css += '#video-wrapper video { display: none; }';
- 
+    css += '.onionToggle {';
+    css += 'position: absolute;';
+    css += 'left: 0;';
+    css += 'top: 0;';
+    css += 'width: 25px;';
+    css += 'height: 25px;';
+    css += 'background-color: #3FE0FD;';
+    css += 'z-index: 20;';
+    css += 'cursor: pointer;';
+    css += 'background-image: url(http://toddhpage.com/meatspack/onion.png);';
+    css += 'background-size: 25px 25px;';
+    css += 'opacity: 0.3;';
+    css += '}';
+    css += '.onionImage {';
+    css += 'position: absolute;';
+    css += 'opacity: 0.5;';
+    css += 'z-index: 10;';
+    css += 'display: none;';
+    css += '}';
+    css += '.onionEnabled.onionImage { display: block; }';
+
     var head = document.head || document.getElementsByTagName('head')[0],
-        style = document.createElement('style');
- 
+        style = document.createElement('style'),
+        hasOnion = false;
+
     style.appendChild(document.createTextNode(css));
     head.appendChild(style);
- 
+
     var chat = document.getElementById('chat-list');
- 
+
     function get_time() {
         var c = new Date();
         var h = c.getHours();
@@ -35,11 +56,12 @@
         var ap = (h < 12) ? "AM" : "PM";
         return (h % 12) + ':' + mi + ' ' + ap;
     }
- 
+
     function add_fake() {
-        var fake_div = document.createElement('li');
+        var fake_div = document.createElement('li'),
+            onionClass = (hasOnion) ? 'onionEnabled' : '';
         fake_div.id = 'fake';
-        fake_div.innerHTML = document.getElementById('video-wrapper').innerHTML + "<p>" + $("#composer-message").val() + "</p><time class='timestamp'>" + get_time() + "</time>";
+        fake_div.innerHTML = document.getElementById('video-wrapper').innerHTML + "<p>" + $("#composer-message").val() + "</p><time class='timestamp'>" + get_time() + "</time>" + "<div class='onionToggle'></div>" + "<img class='onionImage " + onionClass + "' src="+$('#chat-list li').first().find('img').attr('src')+">";
         chat.insertBefore(fake_div, chat.childNodes[0]);
     }
     function fake_function() {
@@ -50,7 +72,11 @@
     $("#composer-message").keyup(function () {
         $("#fake p").text($(this).val());
     });
- 
+    $('body').on('click', '.onionToggle', function() {
+        $('.onionImage').toggleClass('onionEnabled');
+        hasOnion = !hasOnion;
+    });
+
     // http://stackoverflow.com/a/8369269
     function HandleDOM_Change() {
         fake_function()
